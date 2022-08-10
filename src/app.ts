@@ -5,8 +5,6 @@ const row = document.querySelectorAll(".row");
 let page = 1;
 
 const toggleLoader = (displayType: string) => {
-  (document.querySelector("table") as HTMLTableElement).style.display =
-    displayType === "block" ? "none" : "";
   (document.getElementsByClassName(
     "loader"
   )[0] as HTMLDivElement).style.display = displayType;
