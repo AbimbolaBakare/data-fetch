@@ -28,6 +28,7 @@ const fetchData = () => {
 
       row.forEach((_, key) => {
         row[key].setAttribute("id", `${pageResult[key].id}`);
+        row[key].setAttribute("data-entryid", `${pageResult[key].id}`);
         no[key].textContent = ` ${pageResult[key].row}`;
         gender[key].textContent = ` ${pageResult[key].gender}`;
         age[key].textContent = ` ${pageResult[key].age}`;
