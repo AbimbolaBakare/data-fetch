@@ -2,6 +2,7 @@ const no = document.querySelectorAll(".no");
 const gender = document.querySelectorAll(".gender");
 const age = document.querySelectorAll(".age");
 const row = document.querySelectorAll(".row");
+const label = document.querySelector("label");
 let page = 1;
 
 const toggleLoader = (displayType: string) => {
@@ -32,6 +33,7 @@ const fetchData = () => {
         no[key].textContent = ` ${pageResult[key].row}`;
         gender[key].textContent = ` ${pageResult[key].gender}`;
         age[key].textContent = ` ${pageResult[key].age}`;
+        label.textContent = `Showing Page ${page}`;
       });
     });
 };
