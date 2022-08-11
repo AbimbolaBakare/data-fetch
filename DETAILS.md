@@ -34,4 +34,4 @@ A simple web application that displays a paginated list of users fetched and the
 10. There's also a label displaying the current page number.
 11. For the previous and next button, A DOM click event is listened to and a `type` parameter is passed to the function that handles navigation.
 12. If a type `prev` is passed and we're not currently on page one, the current page number is reduced by one and new data is being fetched for the table with the new page number.
-11. If a type `next` is passed, the current page number is increased by one and new data is being fetched for the table with the new page number.
+13. If a type `next` is passed, the current page number is increased by one and new data is being fetched for the table with the new page number.
