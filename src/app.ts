@@ -11,7 +11,13 @@ const toggleLoader = (displayType: string) => {
   )[0] as HTMLDivElement).style.display = displayType;
 };
 
+const disableButton = () => {
+  (document.querySelector(".prev-button") as HTMLButtonElement).disabled =
+    page === 1 ? true : false;
+};
+
 const fetchData = () => {
+  disableButton();
   toggleLoader("block");
   fetch(
     `https://randomapi.com/api/8csrgnjw?key=LEIX-GF3O-AG7I-6J84&page=${page}`
