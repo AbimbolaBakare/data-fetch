@@ -37,15 +37,19 @@ const fetchData = () => {
         age[key].textContent = ` ${pageResult[key].age}`;
         label.textContent = `Showing Page ${page}`;
       });
+    })
+    .catch(() => {
+      toggleLoader("none");
+      console.log("An error occurred");
     });
 };
 
-const navigate = (type) => {
+const navigate = (type: string) => {
   if (type === "prev" && page !== 1) {
-    page = page - 1;
+    page--;
     fetchData();
   } else if (type === "next") {
-    page = page + 1;
+    page++;
     fetchData();
   }
 };
