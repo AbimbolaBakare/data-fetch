@@ -22,16 +22,16 @@ A simple web application that displays a paginated list of users fetched and the
 6. If the current page is page one, the previous button is disabled, because we cannot fetch page '0' or a negative page number
 
 ## IMPLEMENTATION
-1. CLone the repository and install the dependencies.
+1.  Clone the repository and install the dependencies.
 2. Run the project to see it live.
 3. In the index.html file, we have the table, table row and table data cell with their appropriate classes.
 4. In the app.ts file, some variables are initially declared to help with DOM manipulation.
 5. A page number is also declared, which is initially set to zero. 
 6. When the page loads, the `fetchData` function is called  which retrieves the data.
-8. While trying to make the call, a loader is being added to the DOM.
-7. If the call is successful, the loader is stopped and the data retrieved is manipulated into the DOM to render the table.
-8. If the call is not successful, in the catch block, a message `An error occurred` is printed to the console. The loader is also stopped.
-8. There's also a label displaying the current page number.
-9. Fot the previous and next button, A DOM click event is listened to and a `type` parameter is passed to the function that handles navigation.
-10. If a type `prev` is passed and we're not currently on page one, the current page number is reduced by one and new data is being fetched for the table with the new page number.
+7. While trying to make the call, a loader is being added to the DOM.
+8. If the call is successful, the loader is stopped and the data retrieved is manipulated into the DOM to render the table.
+9. If the call is not successful, in the catch block, a message `An error occurred` is printed to the console. The loader is also stopped.
+10. There's also a label displaying the current page number.
+11. Fot the previous and next button, A DOM click event is listened to and a `type` parameter is passed to the function that handles navigation.
+12. If a type `prev` is passed and we're not currently on page one, the current page number is reduced by one and new data is being fetched for the table with the new page number.
 11. If a type `next` is passed, the current page number is increased by one and new data is being fetched for the table with the new page number.
