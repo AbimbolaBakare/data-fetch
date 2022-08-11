@@ -1,8 +1,6 @@
 # Frontend Assessment
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/635829960ee948bfaf299ac4d0eebd53)](https://app.codacy.com/gh/AbimbolaBakare/data-fetch?utm_source=github.com&utm_medium=referral&utm_content=AbimbolaBakare/data-fetch&utm_campaign=Badge_Grade_Settings)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5d9f5af2-c07d-403a-ad07-0208b1efe949/deploy-status)](https://app.netlify.com/sites/sage-centaur-f71cca/deploys)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/635829960ee948bfaf299ac4d0eebd53)](https://app.codacy.com/gh/AbimbolaBakare/data-fetch?utm_source=github.com&utm_medium=referral&utm_content=AbimbolaBakare/data-fetch&utm_campaign=Badge_Grade_Settings) [![Netlify Status](https://api.netlify.com/api/v1/badges/5d9f5af2-c07d-403a-ad07-0208b1efe949/deploy-status)](https://app.netlify.com/sites/sage-centaur-f71cca/deploys)
 
 Build and deploy a very simple frontend app for paginated data, that does the following
 
