@@ -1,9 +1,13 @@
+import { tableData } from "./type";
+
+let page = 1;
+const baseUrl = "https://randomapi.com/api/8csrgnjw?key=LEIX-GF3O-AG7I-6J84";
+
 const no = document.querySelectorAll(".no");
 const gender = document.querySelectorAll(".gender");
 const age = document.querySelectorAll(".age");
 const row = document.querySelectorAll(".row");
 const label = document.querySelector("label");
-let page = 1;
 
 const toggleLoader = (displayType: string) => {
   (document.getElementsByClassName(
@@ -16,12 +20,23 @@ const disableButton = () => {
     page === 1 ? true : false;
 };
 
+const populateTable = (pageResult: tableData[]) => {
+  row.forEach((_, key) => {
+    row[key].setAttribute("id", `${pageResult[key].id}`);
+    row[key].setAttribute("data-entryid", `${pageResult[key].id}`);
+    no[key].textContent = ` ${pageResult[key].row}`;
+    gender[key].textContent = ` ${pageResult[key].gender}`;
+    age[key].textContent = ` ${pageResult[key].age}`;
+  });
+  label.textContent = `Showing Page ${page}`;
+};
+
 const fetchData = () => {
   disableButton();
+
   toggleLoader("block");
-  fetch(
-    `https://randomapi.com/api/8csrgnjw?key=LEIX-GF3O-AG7I-6J84&page=${page}`
-  )
+
+  fetch(`${baseUrl}&page=${page}`)
     .then((response) => response.json())
     .then((data) => {
       toggleLoader("none");
@@ -29,14 +44,8 @@ const fetchData = () => {
 
       const pageResult = Object.values(results)[0];
 
-      row.forEach((_, key) => {
-        row[key].setAttribute("id", `${pageResult[key].id}`);
-        row[key].setAttribute("data-entryid", `${pageResult[key].id}`);
-        no[key].textContent = ` ${pageResult[key].row}`;
-        gender[key].textContent = ` ${pageResult[key].gender}`;
-        age[key].textContent = ` ${pageResult[key].age}`;
-        label.textContent = `Showing Page ${page}`;
-      });
+      // Fill table
+      populateTable(pageResult as tableData[]);
     })
     .catch(() => {
       toggleLoader("none");
@@ -44,6 +53,7 @@ const fetchData = () => {
     });
 };
 
+// Navigate to next or previous page
 const navigate = (type: string) => {
   if (type === "prev" && page !== 1) {
     page--;
@@ -56,9 +66,12 @@ const navigate = (type: string) => {
 
 const startApp = async () => {
   fetchData();
+
+  // Listen for previous button click
   const previousButton = document.querySelector(".prev-button");
   previousButton.addEventListener("click", () => navigate("prev"));
 
+  // Listen for next button click
   const nextButton = document.querySelector(".next-button");
   nextButton.addEventListener("click", () => navigate("next"));
 };

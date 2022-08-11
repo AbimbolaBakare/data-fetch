@@ -77,7 +77,7 @@ tbody tr:nth-child(even) {
 
 .btn-group button:not(:last-child) {
   border-right: none;
-  
+
   /* Prevent double borders */
 }
 
